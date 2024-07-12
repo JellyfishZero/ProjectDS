@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"I:\\unreal\\ProjectDS\\ProjectDS\\Source\\ProjectDS\\ProjectDS.Build.cs",
+		"I:\\unreal\\ProjectDS\\ProjectDS\\Source\\ProjectDS.Target.cs",
+		"I:\\unreal\\ProjectDS\\ProjectDS\\Source\\ProjectDSEditor.Target.cs"
+	],
+	"EngineVersion": "5.4.2"
+}
