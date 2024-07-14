@@ -1,0 +1,28 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"I:/unreal/ProjectDS/ProjectDS/Content/Map/PTMap.umap",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/GameInstance/BP_DSGameInstance.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/GameMode/BP_DSBasicGameMode.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/Character/Player/BP_PlayerCharacter.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/Controller/BP_DSPlayerController.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/EnhancedInput/InputAction/IA_Move.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/EnhancedInput/InputMapping/IMC_DSGameInputContext.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/EnhancedInput/InputAction/IA_Look.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/Controller/BP_MainGamePC.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/EnhancedInput/InputMapping/IMC_DSGameInput.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/EnhancedInput/InputAction/IA_MoveForward.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/EnhancedInput/InputAction/IA_MoveRight.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/EnhancedInput/InputAction/IA_RotateYaw.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/EnhancedInput/InputAction/IA_RotatePitch.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/EnhancedInput/InputAction/IA_Rotate.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/Input/IA_DSGameInput.uasset",
+				"I:/unreal/ProjectDS/ProjectDS/Content/Core/NewBlueprint.uasset"
+			]
+		}
+	]
+}
