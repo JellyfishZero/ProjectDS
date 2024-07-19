@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 PROJECTDS_API UClass* Z_Construct_UClass_APlayerCharacter();
 PROJECTDS_API UClass* Z_Construct_UClass_APlayerCharacter_NoRegister();
 UPackage* Z_Construct_UPackage__Script_ProjectDS();
@@ -39,8 +40,83 @@ struct Z_Construct_UClass_APlayerCharacter_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Actor/Pawn/Character/PlayerCharacter.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MoveAction_MetaData[] = {
+		{ "Category", "InputAction" },
+		{ "ModuleRelativePath", "Public/Actor/Pawn/Character/PlayerCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LookAction_MetaData[] = {
+		{ "Category", "InputAction" },
+		{ "ModuleRelativePath", "Public/Actor/Pawn/Character/PlayerCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RunAndDodgeAction_MetaData[] = {
+		{ "Category", "InputAction" },
+		{ "ModuleRelativePath", "Public/Actor/Pawn/Character/PlayerCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_JumpAction_MetaData[] = {
+		{ "Category", "InputAction" },
+		{ "ModuleRelativePath", "Public/Actor/Pawn/Character/PlayerCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WalkSpeed_MetaData[] = {
+		{ "Category", "PlayerCharacter" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/* \xe8\xb5\xb0\xe8\xb7\xaf\xe5\xae\x9a\xe9\x80\x9f */" },
+#endif
+		{ "ModuleRelativePath", "Public/Actor/Pawn/Character/PlayerCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xe8\xb5\xb0\xe8\xb7\xaf\xe5\xae\x9a\xe9\x80\x9f" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RunSpeed_MetaData[] = {
+		{ "Category", "PlayerCharacter" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/* \xe8\xb7\x91\xe6\xad\xa5\xe5\xae\x9a\xe9\x80\x9f */" },
+#endif
+		{ "ModuleRelativePath", "Public/Actor/Pawn/Character/PlayerCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xe8\xb7\x91\xe6\xad\xa5\xe5\xae\x9a\xe9\x80\x9f" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DodgeDistance_MetaData[] = {
+		{ "Category", "PlayerCharacter" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/* \xe8\xbf\xb4\xe9\x81\xbf\xe8\xb7\x9d\xe9\x9b\xa2 */" },
+#endif
+		{ "ModuleRelativePath", "Public/Actor/Pawn/Character/PlayerCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xe8\xbf\xb4\xe9\x81\xbf\xe8\xb7\x9d\xe9\x9b\xa2" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DodgetJumpingForce_MetaData[] = {
+		{ "Category", "PlayerCharacter" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/* \xe8\xbf\xb4\xe9\x81\xbf\xe8\xb5\xb7\xe8\xb7\xb3\xe5\x8a\x9b\xe9\x81\x93 */" },
+#endif
+		{ "ModuleRelativePath", "Public/Actor/Pawn/Character/PlayerCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xe8\xbf\xb4\xe9\x81\xbf\xe8\xb5\xb7\xe8\xb7\xb3\xe5\x8a\x9b\xe9\x81\x93" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AirDodgeDistanceRatio_MetaData[] = {
+		{ "Category", "PlayerCharacter" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/* \xe7\xa9\xba\xe4\xb8\xad\xe8\xbf\xb4\xe9\x81\xbf\xe8\xb7\x9d\xe9\x9b\xa2\xe6\x95\x88\xe6\x9e\x9c\xe6\xaf\x94\xe4\xbe\x8b */" },
+#endif
+		{ "ModuleRelativePath", "Public/Actor/Pawn/Character/PlayerCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xe7\xa9\xba\xe4\xb8\xad\xe8\xbf\xb4\xe9\x81\xbf\xe8\xb7\x9d\xe9\x9b\xa2\xe6\x95\x88\xe6\x9e\x9c\xe6\xaf\x94\xe4\xbe\x8b" },
+#endif
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MainCamera;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MoveAction;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_LookAction;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_RunAndDodgeAction;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_JumpAction;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_WalkSpeed;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_RunSpeed;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_DodgeDistance;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_DodgetJumpingForce;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_AirDodgeDistanceRatio;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -49,8 +125,26 @@ struct Z_Construct_UClass_APlayerCharacter_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_MainCamera = { "MainCamera", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerCharacter, MainCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MainCamera_MetaData), NewProp_MainCamera_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_MoveAction = { "MoveAction", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerCharacter, MoveAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MoveAction_MetaData), NewProp_MoveAction_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerCharacter, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LookAction_MetaData), NewProp_LookAction_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_RunAndDodgeAction = { "RunAndDodgeAction", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerCharacter, RunAndDodgeAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RunAndDodgeAction_MetaData), NewProp_RunAndDodgeAction_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_JumpAction = { "JumpAction", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerCharacter, JumpAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_JumpAction_MetaData), NewProp_JumpAction_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_WalkSpeed = { "WalkSpeed", nullptr, (EPropertyFlags)0x0020080000010015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerCharacter, WalkSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WalkSpeed_MetaData), NewProp_WalkSpeed_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_RunSpeed = { "RunSpeed", nullptr, (EPropertyFlags)0x0020080000010015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerCharacter, RunSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RunSpeed_MetaData), NewProp_RunSpeed_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DodgeDistance = { "DodgeDistance", nullptr, (EPropertyFlags)0x0020080000010015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerCharacter, DodgeDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DodgeDistance_MetaData), NewProp_DodgeDistance_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DodgetJumpingForce = { "DodgetJumpingForce", nullptr, (EPropertyFlags)0x0020080000010015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerCharacter, DodgetJumpingForce), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DodgetJumpingForce_MetaData), NewProp_DodgetJumpingForce_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_AirDodgeDistanceRatio = { "AirDodgeDistanceRatio", nullptr, (EPropertyFlags)0x0020080000010015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerCharacter, AirDodgeDistanceRatio), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AirDodgeDistanceRatio_MetaData), NewProp_AirDodgeDistanceRatio_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APlayerCharacter_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_MainCamera,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_MoveAction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_LookAction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_RunAndDodgeAction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_JumpAction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_WalkSpeed,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_RunSpeed,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DodgeDistance,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DodgetJumpingForce,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_AirDodgeDistanceRatio,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_APlayerCharacter_Statics::DependentSingletons[])() = {
@@ -93,10 +187,10 @@ APlayerCharacter::~APlayerCharacter() {}
 struct Z_CompiledInDeferFile_FID_unreal_ProjectDS_ProjectDS_Source_ProjectDS_Public_Actor_Pawn_Character_PlayerCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APlayerCharacter, APlayerCharacter::StaticClass, TEXT("APlayerCharacter"), &Z_Registration_Info_UClass_APlayerCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerCharacter), 2380285102U) },
+		{ Z_Construct_UClass_APlayerCharacter, APlayerCharacter::StaticClass, TEXT("APlayerCharacter"), &Z_Registration_Info_UClass_APlayerCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerCharacter), 4129433986U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_unreal_ProjectDS_ProjectDS_Source_ProjectDS_Public_Actor_Pawn_Character_PlayerCharacter_h_1581117282(TEXT("/Script/ProjectDS"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_unreal_ProjectDS_ProjectDS_Source_ProjectDS_Public_Actor_Pawn_Character_PlayerCharacter_h_266982977(TEXT("/Script/ProjectDS"),
 	Z_CompiledInDeferFile_FID_unreal_ProjectDS_ProjectDS_Source_ProjectDS_Public_Actor_Pawn_Character_PlayerCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_unreal_ProjectDS_ProjectDS_Source_ProjectDS_Public_Actor_Pawn_Character_PlayerCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
