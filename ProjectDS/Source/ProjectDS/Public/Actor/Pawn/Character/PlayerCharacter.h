@@ -70,17 +70,9 @@ protected:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	float RunSpeed = 200.f;
 
-	/* 迴避距離 */
+	/* 迴避力道 */
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-	float DodgeDistance = 1000.f;
-
-	/* 迴避起跳力道 */
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-	float DodgetJumpingForce = .1f;
-
-	/* 空中迴避距離效果比例 */
-	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-	float AirDodgeDistanceRatio = .8f;
+	float DodgeForce = 1000.f;
 
 	/* 角色模型旋轉有關，先不做 */
 	//UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
@@ -110,6 +102,13 @@ private:
 	float MoveSpeed; 
 
 #pragma endregion
+
+#pragma region TimeDelegate
+
+	void RestoreFrictionAndCollision();
+
+#pragma endregion
+
 
 };
 

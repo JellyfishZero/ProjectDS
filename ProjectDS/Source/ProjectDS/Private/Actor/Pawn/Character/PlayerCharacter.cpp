@@ -112,16 +112,11 @@ void APlayerCharacter::RunStop()
 void APlayerCharacter::Dodge()
 {
 	FVector LastMovementInputDirection = GetLastMovementInputVector().GetSafeNormal();
-	bool bIsOnGround = GetCharacterMovement()->IsMovingOnGround();
-
 	// TODO:暫時消除摩擦力，看ChatGpt給的參考
 
-	FVector DodgeForce = FVector(
-		bIsOnGround ? LastMovementInputDirection.X * DodgeDistance : LastMovementInputDirection.X * DodgeDistance * AirDodgeDistanceRatio,
-		bIsOnGround ? LastMovementInputDirection.Y * DodgeDistance : LastMovementInputDirection.Y * DodgeDistance * AirDodgeDistanceRatio,
-		bIsOnGround ? 0.f : DodgetJumpingForce);
-	LaunchCharacter(DodgeForce, true, true);
-	GEngine->AddOnScreenDebugMessage(INDEX_NONE, .2f, FColor::Cyan, FString::Printf(TEXT("Dodge, %s"), bIsOnGround ? TEXT("Gorund") : TEXT("Air")));
+	FVector DodgeVelocity = FVector(LastMovementInputDirection.X, LastMovementInputDirection.Y, 0.f) * DodgeForce;
+	LaunchCharacter(DodgeVelocity, true, true);
+	// GEngine->AddOnScreenDebugMessage(INDEX_NONE, .2f, FColor::Cyan, FString::Printf(TEXT("Dodge, %s"), bIsOnGround ? TEXT("Gorund") : TEXT("Air")));
 
 	// TODO:冷卻
 }
