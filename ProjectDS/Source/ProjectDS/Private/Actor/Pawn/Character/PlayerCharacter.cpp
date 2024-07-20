@@ -112,7 +112,6 @@ void APlayerCharacter::RunStop()
 void APlayerCharacter::Dodge()
 {
 	FVector LastMovementInputDirection = GetLastMovementInputVector().GetSafeNormal();
-	// TODO:暫時消除摩擦力，看ChatGpt給的參考
 
 	FVector DodgeVelocity = FVector(LastMovementInputDirection.X, LastMovementInputDirection.Y, 0.f) * DodgeForce;
 	LaunchCharacter(DodgeVelocity, true, true);

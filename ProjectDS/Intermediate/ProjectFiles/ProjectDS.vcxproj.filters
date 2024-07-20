@@ -57,6 +57,15 @@
     <ClCompile Include="..\..\Source\ProjectDS\Private\Actor\Pawn\Character\PlayerCharacter.cpp">
       <Filter>Source\ProjectDS\Private\Actor\Pawn\Character</Filter>
     </ClCompile>
+    <Filter Include="Source\ProjectDS\Private\Components">
+      <UniqueIdentifier>{EEC39303-C315-3937-80D9-C5BC697F83A2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ProjectDS\Private\Components\PlayerCharacterComps">
+      <UniqueIdentifier>{8E8DA424-E6F1-3234-9A8E-03AFC176AAC8}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ProjectDS\Private\Components\PlayerCharacterComps\PlayerStatusComp.cpp">
+      <Filter>Source\ProjectDS\Private\Components\PlayerCharacterComps</Filter>
+    </ClCompile>
     <Filter Include="Source\ProjectDS\Private\Controller">
       <UniqueIdentifier>{2395FE02-4ABF-3D31-88F3-7D4D26F2F4B1}</UniqueIdentifier>
     </Filter>
@@ -72,11 +81,11 @@
     <Filter Include="Source\ProjectDS\Private\SubSystem">
       <UniqueIdentifier>{7CF3C09F-89CA-334D-9ED1-18BE5EECD7E3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\ProjectDS\Private\SubSystem\LocalPlayerSubsystem">
-      <UniqueIdentifier>{8324E38A-EB28-3508-AE3C-54F62EF08FDC}</UniqueIdentifier>
+    <Filter Include="Source\ProjectDS\Private\SubSystem\MainCharacterSubsystem">
+      <UniqueIdentifier>{50C26886-D26D-3AA1-93EB-880911724274}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\ProjectDS\Private\SubSystem\LocalPlayerSubsystem\DSLocalPlayerSubsystem.cpp">
-      <Filter>Source\ProjectDS\Private\SubSystem\LocalPlayerSubsystem</Filter>
+    <ClCompile Include="..\..\Source\ProjectDS\Private\SubSystem\MainCharacterSubsystem\MainCharacterSubsystem.cpp">
+      <Filter>Source\ProjectDS\Private\SubSystem\MainCharacterSubsystem</Filter>
     </ClCompile>
     <Filter Include="Source\ProjectDS\Public">
       <UniqueIdentifier>{AFC98ECC-B178-3F50-9BCD-152F6E1B3172}</UniqueIdentifier>
@@ -96,11 +105,26 @@
     <ClInclude Include="..\..\Source\ProjectDS\Public\Actor\Pawn\Character\PlayerCharacter.h">
       <Filter>Source\ProjectDS\Public\Actor\Pawn\Character</Filter>
     </ClInclude>
+    <Filter Include="Source\ProjectDS\Public\Components">
+      <UniqueIdentifier>{F699B97C-A0AA-3361-9384-738AF1F1F472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ProjectDS\Public\Components\PlayerCharacterComps">
+      <UniqueIdentifier>{49833046-2681-33F5-9BD8-CF8A5AB12E9C}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\ProjectDS\Public\Components\PlayerCharacterComps\PlayerStatusComp.h">
+      <Filter>Source\ProjectDS\Public\Components\PlayerCharacterComps</Filter>
+    </ClInclude>
     <Filter Include="Source\ProjectDS\Public\Controller">
       <UniqueIdentifier>{A2F8488E-971D-3C52-BEB5-9D3E8E495607}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\ProjectDS\Public\Controller\MainGamePC.h">
       <Filter>Source\ProjectDS\Public\Controller</Filter>
+    </ClInclude>
+    <Filter Include="Source\ProjectDS\Public\DataTable">
+      <UniqueIdentifier>{F4F84174-2912-37DF-A622-9F3E34D581BA}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\ProjectDS\Public\DataTable\MainCharacterTableRow.h">
+      <Filter>Source\ProjectDS\Public\DataTable</Filter>
     </ClInclude>
     <Filter Include="Source\ProjectDS\Public\GameMode">
       <UniqueIdentifier>{3FF41D70-52CB-3896-AEB9-01BD4C40B19D}</UniqueIdentifier>
@@ -111,11 +135,11 @@
     <Filter Include="Source\ProjectDS\Public\SubSystem">
       <UniqueIdentifier>{0DC014A8-C864-31B2-AF87-29F8B224DFDC}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\ProjectDS\Public\SubSystem\LocalPlayerSubsystem">
-      <UniqueIdentifier>{82D2F341-E734-3D35-B815-D4CA64A36612}</UniqueIdentifier>
+    <Filter Include="Source\ProjectDS\Public\SubSystem\MainCharacterSubsystem">
+      <UniqueIdentifier>{527E2B5C-F487-3C08-B8B0-FE39065C8D83}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Source\ProjectDS\Public\SubSystem\LocalPlayerSubsystem\DSLocalPlayerSubsystem.h">
-      <Filter>Source\ProjectDS\Public\SubSystem\LocalPlayerSubsystem</Filter>
+    <ClInclude Include="..\..\Source\ProjectDS\Public\SubSystem\MainCharacterSubsystem\MainCharacterSubsystem.h">
+      <Filter>Source\ProjectDS\Public\SubSystem\MainCharacterSubsystem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
