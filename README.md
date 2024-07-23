@@ -1,2 +1,2 @@
 # ProjectDS
- AnimeFPSGameProject
+ AnimeFPSGame Prototype
