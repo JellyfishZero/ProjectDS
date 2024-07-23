@@ -1,4 +1,4 @@
-s// All rights reserved by Jellyfish-zero.
+// All rights reserved by Jellyfish-zero.
 
 #pragma once
 

@@ -7,7 +7,9 @@
         "Includes": [
             "i:\\unreal\\projectds\\projectds\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\projectds\\definitions.projectds.h",
             "i:\\unreal\\projectds\\projectds\\source\\projectds\\public\\controller\\maingamepc.h",
-            "i:\\unreal\\projectds\\projectds\\intermediate\\build\\win64\\unrealeditor\\inc\\projectds\\uht\\maingamepc.generated.h"
+            "i:\\unreal\\projectds\\projectds\\intermediate\\build\\win64\\unrealeditor\\inc\\projectds\\uht\\maingamepc.generated.h",
+            "i:\\unrealengine\\ue_5.4\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\inputactionvalue.h",
+            "i:\\unrealengine\\ue_5.4\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\inputactionvalue.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

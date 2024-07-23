@@ -36,7 +36,6 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	if (ensure(IsValid(EnhancedInputComponent)))
 	{
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Move);
-		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Look);
 		EnhancedInputComponent->BindAction(RunAndDodgeAction, ETriggerEvent::Triggered, this, &APlayerCharacter::RunStart);
 		EnhancedInputComponent->BindAction(RunAndDodgeAction, ETriggerEvent::Completed, this, &APlayerCharacter::RunStop);
 		EnhancedInputComponent->BindAction(RunAndDodgeAction, ETriggerEvent::Canceled, this, &APlayerCharacter::Dodge);
@@ -65,36 +64,6 @@ void APlayerCharacter::Move(const FInputActionValue& Value)
 
 	AddMovementInput(ForwardDirection * UGameplayStatics::GetWorldDeltaSeconds(GetWorld()) * MoveSpeed, MovementVector.X);
 	AddMovementInput(RightDirection * UGameplayStatics::GetWorldDeltaSeconds(GetWorld()) * MoveSpeed, MovementVector.Y);
-}
-
-void APlayerCharacter::Look(const FInputActionValue& Value)
-{
-	FVector2D LookVector = Value.Get<FVector2D>();
-
-	APlayerController* PlayerController = Cast<APlayerController>(GetController());
-	if (ensure(IsValid(PlayerController)))
-	{
-		PlayerController->AddYawInput(LookVector.X);
-		PlayerController->AddPitchInput(LookVector.Y);
-
-		/* 角色模型延遲旋轉有關，先不做 */
-		//FRotator Delta = GetControlRotation() - GetActorRotation();
-		//if (Delta.Yaw > RotateAngle)
-		//{
-		//	GetCharacterMovement()->bUseControllerDesiredRotation = true;
-		//	GetCharacterMovement()->bOrientRotationToMovement = false;
-		//}
-		//else if (Delta.Yaw < -RotateAngle)
-		//{
-		//	GetCharacterMovement()->bUseControllerDesiredRotation = true;
-		//	GetCharacterMovement()->bOrientRotationToMovement = false;
-		//}
-		//else
-		//{
-		//	GetCharacterMovement()->bUseControllerDesiredRotation = false;
-		//	GetCharacterMovement()->bOrientRotationToMovement = false;
-		//}
-	}
 }
 
 void APlayerCharacter::RunStart()

@@ -1,7 +1,7 @@
 I:\unreal\ProjectDS\ProjectDS\Source\ProjectDS\Public\DSGameInstance.h
-I:\unreal\ProjectDS\ProjectDS\Source\ProjectDS\Public\Actor\Pawn\Character\PlayerCharacter.h
+I:\unreal\ProjectDS\ProjectDS\Source\ProjectDS\Public\SubSystem\MainCharacterSubsystem\MainCharacterSubsystem.h
+I:\unreal\ProjectDS\ProjectDS\Source\ProjectDS\Public\GameMode\DSBasicGameMode.h
 I:\unreal\ProjectDS\ProjectDS\Source\ProjectDS\Public\Components\PlayerCharacterComps\PlayerStatusComp.h
 I:\unreal\ProjectDS\ProjectDS\Source\ProjectDS\Public\Controller\MainGamePC.h
 I:\unreal\ProjectDS\ProjectDS\Source\ProjectDS\Public\DataTable\MainCharacterTableRow.h
-I:\unreal\ProjectDS\ProjectDS\Source\ProjectDS\Public\GameMode\DSBasicGameMode.h
-I:\unreal\ProjectDS\ProjectDS\Source\ProjectDS\Public\SubSystem\MainCharacterSubsystem\MainCharacterSubsystem.h
+I:\unreal\ProjectDS\ProjectDS\Source\ProjectDS\Public\Actor\Pawn\Character\PlayerCharacter.h

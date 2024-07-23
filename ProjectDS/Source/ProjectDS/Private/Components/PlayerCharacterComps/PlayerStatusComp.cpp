@@ -14,12 +14,18 @@ UPlayerStatusComp::UPlayerStatusComp()
 	// ...
 }
 
-// Called every frame
-void UPlayerStatusComp::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UPlayerStatusComp::InitPlayerStatus()
 {
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
+	UMainCharacterSubsystem* MainCharacterSubsys = GetWorld()->GetGameInstance()->GetSubsystem<UMainCharacterSubsystem>();
+	if (ensure(IsValid(MainCharacterSubsys)))
+	{
+		MaxHealth = MainCharacterSubsys->GetCurrentCharacterMaxHealth();
+		MaxMana = MainCharacterSubsys->GetCurrentCharacterMaxMana();
+		MaxStamina = MainCharacterSubsys->GetCurrentCharacterMaxStamina();
+	}
+	CurrentHealth = MaxHealth;
+	CurrentMana = MaxMana;
+	CurrentStamina = MaxStamina;
 }
 
 // Called when the game starts
@@ -27,6 +33,6 @@ void UPlayerStatusComp::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
+	InitPlayerStatus();
 	
 }

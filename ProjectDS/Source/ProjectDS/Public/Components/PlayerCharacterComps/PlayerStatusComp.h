@@ -16,11 +16,31 @@ public:
 	// Sets default values for this component's properties
 	UPlayerStatusComp();
 
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	void InitPlayerStatus();
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 		
+
+private:
+
+	UPROPERTY()
+	int32 MaxHealth = 100;
+
+	UPROPERTY()
+	int32 CurrentHealth;
+
+	UPROPERTY()
+	int32 MaxMana = 100;
+
+	UPROPERTY()
+	int32 CurrentMana;
+
+	UPROPERTY()
+	int32 MaxStamina = 100;
+
+	UPROPERTY()
+	int32 CurrentStamina;
+
 };

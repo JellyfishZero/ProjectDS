@@ -50,9 +50,6 @@ protected:
 	UInputAction* MoveAction;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "InputAction")
-	UInputAction* LookAction;
-
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "InputAction")
 	UInputAction* RunAndDodgeAction;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "InputAction")
@@ -85,8 +82,6 @@ private:
 #pragma region NormalGameInput
 
 	void Move(const FInputActionValue& Value);
-
-	void Look(const FInputActionValue& Value);
 	
 	void RunStart();
 	
@@ -100,12 +95,6 @@ private:
 
 	/* 當前移動速度 */
 	float MoveSpeed; 
-
-#pragma endregion
-
-#pragma region TimeDelegate
-
-	void RestoreFrictionAndCollision();
 
 #pragma endregion
 

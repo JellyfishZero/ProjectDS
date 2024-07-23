@@ -7,6 +7,7 @@
 #include "MainGamePC.generated.h"
 
 class UInputMappingContext;
+class UInputAction;
 
 /**
  * 
@@ -19,6 +20,8 @@ class PROJECTDS_API AMainGamePC : public APlayerController
 protected:
 
 	void BeginPlay() override;
+
+	void SetupInputComponent() override;
 
 #pragma region InputMappingContexts
 
@@ -37,5 +40,21 @@ protected:
 
 #pragma endregion
 
+#pragma region CommonInputAction
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "InputAction")
+	UInputAction* LookAction;
+
+#pragma endregion
+
+private:
+
+#pragma region CommonInputBindingFunctions
+
+	/*Common Input*/
+	UFUNCTION()
+	void Look(const FInputActionValue& Value);
+
+#pragma endregion
 
 };
