@@ -30,11 +30,11 @@ struct Z_Construct_UFunction_AMainGamePC_Look_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/*Common Input*/" },
+		{ "Comment", "/* \xe6\x94\x9d\xe5\xbd\xb1\xe6\xa9\x9f\xe6\x97\x8b\xe8\xbd\x89 */" },
 #endif
 		{ "ModuleRelativePath", "Public/Controller/MainGamePC.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Common Input" },
+		{ "ToolTip", "\xe6\x94\x9d\xe5\xbd\xb1\xe6\xa9\x9f\xe6\x97\x8b\xe8\xbd\x89" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Value_MetaData[] = {
@@ -102,7 +102,13 @@ struct Z_Construct_UClass_AMainGamePC_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxPitchAngle_MetaData[] = {
 		{ "Category", "MainGamePC" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/*\xe6\x94\x9d\xe5\xbd\xb1\xe6\xa9\x9f\xe8\xa7\x92\xe5\xba\xa6\xe9\x99\x90\xe5\x88\xb6*/" },
+#endif
 		{ "ModuleRelativePath", "Public/Controller/MainGamePC.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xe6\x94\x9d\xe5\xbd\xb1\xe6\xa9\x9f\xe8\xa7\x92\xe5\xba\xa6\xe9\x99\x90\xe5\x88\xb6" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinPitchAngle_MetaData[] = {
 		{ "Category", "MainGamePC" },
@@ -120,7 +126,7 @@ struct Z_Construct_UClass_AMainGamePC_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMainGamePC_Look, "Look" }, // 393938229
+		{ &Z_Construct_UFunction_AMainGamePC_Look, "Look" }, // 628868392
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -180,10 +186,10 @@ AMainGamePC::~AMainGamePC() {}
 struct Z_CompiledInDeferFile_FID_unreal_ProjectDS_ProjectDS_Source_ProjectDS_Public_Controller_MainGamePC_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMainGamePC, AMainGamePC::StaticClass, TEXT("AMainGamePC"), &Z_Registration_Info_UClass_AMainGamePC, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainGamePC), 4121231201U) },
+		{ Z_Construct_UClass_AMainGamePC, AMainGamePC::StaticClass, TEXT("AMainGamePC"), &Z_Registration_Info_UClass_AMainGamePC, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainGamePC), 3324857191U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_unreal_ProjectDS_ProjectDS_Source_ProjectDS_Public_Controller_MainGamePC_h_1758392981(TEXT("/Script/ProjectDS"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_unreal_ProjectDS_ProjectDS_Source_ProjectDS_Public_Controller_MainGamePC_h_598623378(TEXT("/Script/ProjectDS"),
 	Z_CompiledInDeferFile_FID_unreal_ProjectDS_ProjectDS_Source_ProjectDS_Public_Controller_MainGamePC_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_unreal_ProjectDS_ProjectDS_Source_ProjectDS_Public_Controller_MainGamePC_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

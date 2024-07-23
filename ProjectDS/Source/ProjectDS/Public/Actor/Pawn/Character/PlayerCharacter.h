@@ -9,6 +9,7 @@
 class UCameraComponent;
 class UInputAction;
 class USpringArmComponent;
+class UPlayerStatusComp;
 
 struct FInputActionValue;
 
@@ -31,16 +32,25 @@ public:
 
 	FORCEINLINE UCameraComponent* GetMainCamera() const;
 
+	FORCEINLINE UPlayerStatusComp* GetStatusComp() const;
+
 #pragma endregion
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-#pragma region Components
+#pragma region SceneComponents
 
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
 	UCameraComponent* MainCamera;
+
+#pragma endregion
+
+#pragma region ActorComponents
+
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+	UPlayerStatusComp* StatusComp;
 
 #pragma endregion
 
@@ -75,6 +85,10 @@ protected:
 	//UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	//float RotateAngle = 50.f;
 
+	/* 迴避體力花費 */
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	int32 DodgeStaminaCost = 100; // TODO: 應該用另一個ActorComponent管理起來
+
 #pragma endregion
 
 private:
@@ -104,4 +118,9 @@ private:
 FORCEINLINE UCameraComponent* APlayerCharacter::GetMainCamera() const
 {
 	return MainCamera;
+}
+
+FORCEINLINE UPlayerStatusComp* APlayerCharacter::GetStatusComp() const
+{
+	return StatusComp;
 }

@@ -19,9 +19,9 @@ class PROJECTDS_API AMainGamePC : public APlayerController
 
 protected:
 
-	void BeginPlay() override;
+	virtual void BeginPlay() override;
 
-	void SetupInputComponent() override;
+	virtual void SetupInputComponent() override;
 
 #pragma region InputMappingContexts
 
@@ -31,6 +31,8 @@ protected:
 #pragma endregion
 
 #pragma region CameraLimitParams
+
+	/*攝影機角度限制*/
 
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	float MaxPitchAngle = 45.f;
@@ -47,11 +49,17 @@ protected:
 
 #pragma endregion
 
+#pragma region HUD
+
+	// TODO:新增MainGameHUD
+
+#pragma endregion
+
 private:
 
 #pragma region CommonInputBindingFunctions
 
-	/*Common Input*/
+	/* 攝影機旋轉 */
 	UFUNCTION()
 	void Look(const FInputActionValue& Value);
 

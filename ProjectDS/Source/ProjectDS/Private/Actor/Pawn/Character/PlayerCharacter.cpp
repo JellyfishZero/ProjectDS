@@ -4,6 +4,7 @@
 #include "Actor/Pawn/Character/PlayerCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/PlayerCharacterComps/PlayerStatusComp.h"
 #include "EnhancedInputComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "InputAction.h"
@@ -14,10 +15,12 @@
 APlayerCharacter::APlayerCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 	MainCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("MainCamera"));
 	MainCamera->SetupAttachment(GetCapsuleComponent());
+
+	StatusComp = CreateDefaultSubobject<UPlayerStatusComp>(TEXT("StatusComp"));
 }
 
 // Called every frame
@@ -80,12 +83,15 @@ void APlayerCharacter::RunStop()
 
 void APlayerCharacter::Dodge()
 {
-	FVector LastMovementInputDirection = GetLastMovementInputVector().GetSafeNormal();
+	if (StatusComp->GetCurrentStamina() >= DodgeStaminaCost)
+	{
+		FVector LastMovementInputDirection = GetLastMovementInputVector().GetSafeNormal();
 
-	FVector DodgeVelocity = FVector(LastMovementInputDirection.X, LastMovementInputDirection.Y, 0.f) * DodgeForce;
-	LaunchCharacter(DodgeVelocity, true, true);
-	// GEngine->AddOnScreenDebugMessage(INDEX_NONE, .2f, FColor::Cyan, FString::Printf(TEXT("Dodge, %s"), bIsOnGround ? TEXT("Gorund") : TEXT("Air")));
+		FVector DodgeVelocity = FVector(LastMovementInputDirection.X, LastMovementInputDirection.Y, 0.f) * DodgeForce;
+		LaunchCharacter(DodgeVelocity, true, true);
+		StatusComp->DecreaseCurrentStamina(DodgeStaminaCost);
+	}
 
-	// TODO:冷卻
+	// TOOD:冷卻？需要嗎？看體力恢復速度而定，如果超過100點的體力，就表示可以連續迴避
 }
 
