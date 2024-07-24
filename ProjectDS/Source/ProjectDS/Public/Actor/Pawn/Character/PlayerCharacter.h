@@ -7,9 +7,10 @@
 #include "PlayerCharacter.generated.h"
 
 class UCameraComponent;
+class UCombatSubsystem;
 class UInputAction;
-class USpringArmComponent;
 class UPlayerStatusComp;
+class USpringArmComponent;
 
 struct FInputActionValue;
 
@@ -42,6 +43,16 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+#pragma region CameraEffect
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void CameraBlackWhiteFadeInEvent();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void CameraBlackWhiteFadeOutEvent();
+
+#pragma endregion
+
 #pragma region SceneComponents
 
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
@@ -73,11 +84,11 @@ protected:
 
 	/* 走路定速 */
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-	float WalkSpeed = 100.f;
+	float WalkSpeed = 1.f;
 
 	/* 跑步定速 */
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-	float RunSpeed = 200.f;
+	float RunSpeed = 2.f;
 
 	/* 迴避力道 */
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
@@ -90,6 +101,18 @@ protected:
 	/* 迴避體力花費 */
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	int32 DodgeStaminaCost = 100; // TODO: 應該用另一個ActorComponent管理起來
+
+	/* 精準迴避距離 */
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	float PreciseDistance = 600.f; // TODO: 應該用另一個ActorComponent管理起來
+
+	/* 精準迴避slow motion，TimeDilation值應該介於0~1之間，才會slow motion */
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	float PreciseTimeDilation = 0.2f;
+
+	/* 精準迴避SlowMotion持續時間 */
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+	float SlowMotionPersisTime = 2.f;
 
 #pragma endregion
 
@@ -107,13 +130,31 @@ private:
 
 #pragma endregion
 
+#pragma region PreciseTimeSlowMotionFunctions
+
+	UFUNCTION()
+	void StopTimeSlowMotion();
+
+#pragma endregion
+
+#pragma region Subsystems
+
+	TWeakObjectPtr<UCombatSubsystem> CombatSys;
+
+#pragma endregion
+
+#pragma region PreciseTimeSlowParams
+
+	FTimerHandle PreciseTimeSlowMotionHandler;
+
+#pragma endregion
+
 #pragma region PrivateVariable
 
 	/* 當前移動速度 */
 	float MoveSpeed; 
 
 #pragma endregion
-
 
 };
 

@@ -3,6 +3,7 @@
 
 #include "Components/PlayerCharacterComps/PlayerStatusComp.h"
 #include "SubSystem/MainCharacterSubsystem/MainCharacterSubsystem.h"
+#include "Kismet/GameplayStatics.h"
 
 DEFINE_LOG_CATEGORY(PlayerStatusCompLog);
 
@@ -138,10 +139,10 @@ void UPlayerStatusComp::BindCallBackFunctions()
 
 void UPlayerStatusComp::HandleStaminaChanged(int32 InCurrentStamina, int32 InMaxStamina)
 {
-	/* 觸發條件是當前體力比體力最大值少 且 要避免Timer重複被註冊 */
-	if (InCurrentStamina < InMaxStamina && !GetWorld()->GetTimerManager().TimerExists(StaminaRecoerTimerHandler))
+	/* 觸發條件是當前體力比體力最大值少*/
+	if (InCurrentStamina < InMaxStamina)
 	{
-		GetWorld()->GetTimerManager().SetTimer(StaminaRecoerTimerHandler, this, &UPlayerStatusComp::AutoRecoverStamina, StaminaAutoRecoverInterval, true);
+		GetWorld()->GetTimerManager().SetTimer(StaminaRecoerTimerHandler, this, &UPlayerStatusComp::AutoRecoverStamina, StaminaAutoRecoverInterval * UGameplayStatics::GetGlobalTimeDilation(GetWorld()), true);
 	}
 }
 
