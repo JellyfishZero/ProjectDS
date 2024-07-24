@@ -1,4 +1,4 @@
-// All rights reserved by Jellyfish-zero.
+ï»¿// All rights reserved by Jellyfish-zero.
 
 #pragma once
 
@@ -15,20 +15,20 @@ public:
 
     FMainCharacterTableRow() {}
 
-    /* µ¥¯Å */
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    int32 Level;
+    ///* ç­‰ç´š */
+    //UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    //int32 Level;
 
-    /* ¥Í©R¤O */
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    int32 Health;
+    ///* ç”Ÿå‘½åŠ› */
+    //UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    //int32 Health;
 
-    /* Å]¤O */
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) 
-    int32 Mana;
+    ///* é­”åŠ› */
+    //UPROPERTY(EditAnywhere, BlueprintReadWrite) 
+    //int32 Mana;
 
-    /* Åé¤O */
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    int32 Stamina;
+    ///* é«”åŠ› */
+    //UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    //int32 Stamina;
 
 };
