@@ -8,6 +8,7 @@
 
 class UInputMappingContext;
 class UInputAction;
+class UUserWidget;
 
 /**
  * 
@@ -51,7 +52,13 @@ protected:
 
 #pragma region HUD
 
-	// TODO:新增MainGameHUD
+	// TODO: 是否需要用UI Manager管理起來？
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere)
+	TSubclassOf<UUserWidget> MainGameHUDTemplate;
+
+	UPROPERTY(BlueprintReadOnly, Category = "UI")
+	UUserWidget* MainGameHUD;
 
 #pragma endregion
 

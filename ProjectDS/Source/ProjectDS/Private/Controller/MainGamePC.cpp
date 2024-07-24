@@ -7,6 +7,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "InputAction.h"
+#include "Blueprint/UserWidget.h"
 
 void AMainGamePC::BeginPlay()
 {
@@ -22,6 +23,12 @@ void AMainGamePC::BeginPlay()
 	/* 初始化鏡頭上下角度 */
 	PlayerCameraManager->ViewPitchMax = MaxPitchAngle;
 	PlayerCameraManager->ViewPitchMin = MinPitchAngle;
+
+	MainGameHUD = CreateWidget<UUserWidget>(this, MainGameHUDTemplate, FName(TEXT("MainGameUI")));
+	if (IsValid(MainGameHUD))
+	{
+		MainGameHUD->AddToViewport();
+	}
 }
 
 void AMainGamePC::SetupInputComponent()

@@ -30,8 +30,10 @@ public:
 
 #pragma region API
 
+	UFUNCTION(BlueprintCallable)
 	FORCEINLINE UCameraComponent* GetMainCamera() const;
-
+	
+	UFUNCTION(BlueprintCallable)
 	FORCEINLINE UPlayerStatusComp* GetStatusComp() const;
 
 #pragma endregion

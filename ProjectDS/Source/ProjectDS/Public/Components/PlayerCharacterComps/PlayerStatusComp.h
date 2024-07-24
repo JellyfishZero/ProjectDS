@@ -153,12 +153,12 @@ private:
 	FTimerHandle StaminaRecoerTimerHandler;
 
 	/* 體力恢復間隔 */
-	UPROPERTY()
-	int32 StaminaAutoRecoverInterval = 1.f; // 暫代尚無被系統管理
+	UPROPERTY(EditAnywhere)
+	float StaminaAutoRecoverInterval = 0.1f; // 暫代尚無被系統管理
 
 	/* 體力恢復量 */
-	UPROPERTY()
-	int32 StaminaAutoRecoverValue = 20.f; // 暫代尚無被系統管理
+	UPROPERTY(EditAnywhere)
+	int32 StaminaAutoRecoverValue = 2; // 暫代尚無被系統管理
 
 #pragma endregion
 
