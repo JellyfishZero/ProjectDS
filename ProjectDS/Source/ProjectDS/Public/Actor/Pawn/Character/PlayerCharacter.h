@@ -10,6 +10,7 @@ class UCameraComponent;
 class UCombatSubsystem;
 class UInputAction;
 class UPlayerStatusComp;
+class UNiagaraComponent;
 class USpringArmComponent;
 
 struct FInputActionValue;
@@ -58,6 +59,9 @@ protected:
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
 	UCameraComponent* MainCamera;
 
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+	UNiagaraComponent* NS_PerciseDodge;
+
 #pragma endregion
 
 #pragma region ActorComponents
@@ -82,13 +86,13 @@ protected:
 
 #pragma region EditableVariables
 
-	/* 走路定速 */
+	/* 行走的速度Scale */
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-	float WalkSpeed = 1.f;
+	float WalkScale = 0.6f;
 
-	/* 跑步定速 */
+	/* 跑步的速度Scale */
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-	float RunSpeed = 2.f;
+	float RunScale = 1.f;
 
 	/* 迴避力道 */
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)

@@ -11,6 +11,7 @@
 #include "InputActionValue.h"
 #include "Kismet/GameplayStatics.h"
 #include "SubSystem/CombatSubsystem/CombatSubsystem.h"
+#include "NiagaraComponent.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter()
@@ -21,7 +22,12 @@ APlayerCharacter::APlayerCharacter()
 	MainCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("MainCamera"));
 	MainCamera->SetupAttachment(GetCapsuleComponent());
 
+	NS_PerciseDodge = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NS_PerciseDodge"));
+	NS_PerciseDodge->SetupAttachment(GetCapsuleComponent());
+	NS_PerciseDodge->SetAutoActivate(false);
+
 	StatusComp = CreateDefaultSubobject<UPlayerStatusComp>(TEXT("StatusComp"));
+
 }
 
 // Called every frame
@@ -54,7 +60,7 @@ void APlayerCharacter::BeginPlay()
 
 	CombatSys = GetWorld()->GetGameInstance()->GetSubsystem<UCombatSubsystem>();
 
-	MoveSpeed = WalkSpeed;
+	MoveSpeed = WalkScale;
 }
 
 void APlayerCharacter::Move(const FInputActionValue& Value)
@@ -76,13 +82,13 @@ void APlayerCharacter::Move(const FInputActionValue& Value)
 void APlayerCharacter::RunStart()
 {
 	GEngine->AddOnScreenDebugMessage(INDEX_NONE, .2f, FColor::Cyan, FString(TEXT("RunStart")));
-	MoveSpeed = RunSpeed;
+	MoveSpeed = RunScale;
 }
 
 void APlayerCharacter::RunStop()
 {
 	GEngine->AddOnScreenDebugMessage(INDEX_NONE, .2f, FColor::Cyan, FString(TEXT("RunStop")));
-	MoveSpeed = WalkSpeed;
+	MoveSpeed = WalkScale;
 }
 
 void APlayerCharacter::Dodge()
@@ -103,6 +109,7 @@ void APlayerCharacter::Dodge()
 			CustomTimeDilation = 1.f / PreciseTimeDilation;
 			GetWorld()->GetTimerManager().SetTimer(PreciseTimeSlowMotionHandler, this, &APlayerCharacter::StopTimeSlowMotion, SlowMotionPersisTime * PreciseTimeDilation, false);
 			CameraBlackWhiteFadeInEvent();
+			NS_PerciseDodge->Activate(true);
 			//GetMainCamera()->PostProcessSettings.bOverride_ColorSaturation = true;
 			//GetMainCamera()->PostProcessSettings.ColorSaturation = FVector4(0.f, 0.f, 0.f, 1.f); // 黑白效果
 		}
